@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2017 Esri
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#2196F3">
+    <title>City of Broadbent</title>
+
+    <!-- CSS  -->
+    <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- ArcGIS API -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+    <script defer src="https://js.arcgis.com/4.3/"></script>
+    <script defer src="workflowJS/init.js"></script>
+
+</head>
+<body id="top" class="scrollspy">
+
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<!--Navigation-->
+ <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+              <img id="logo" src="img/broadbent.png">
+            <a href="#" id="logo-container" class="brand-logo">City of Broadbent</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#newRequest">New Request</a></li>
+                    <li><a href="#viewRequest">View Request</a></li>
+                    <li><a href="#contact">Feedback</a></li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                  <li><a href="#newRequest">New Request</a></li>
+                  <li><a href="#viewRequest">View Request</a></li>
+                  <li><a href="#contact">Feedback</a></li>
+                </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--Hero-->
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <h1 class="text_h center header cd-headline letters type">
+            <span class="bannerNormal"> Welcome to <span class="bannerHighlight">City of Broadbent </span> </span>
+        </h1>
+
+    </div>
+</div>
+
+
+<!--New Request-->
+<div class="section scrollspy" id="newRequest">
+    <div class="container">
+        <h2 class="header text_b">New Request </h2>
+        <h5 class="text_h2"> Report an issue in your city  </h5>
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect ">
+                        <img  id="image1" src="img/signage.jpg">
+                    </div>
+                    <div class="card-content ">
+                        <span class="card-title grey-text text-darken-4">Signage Report</span>
+                        <p><a class="activator" id="createSignageBtn">Create Request</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Signage Report <i class="mdi-navigation-close right"></i></span>
+                        <span class="span_h2" id='createdJobId1'> Loading...</span>
+                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
+
+                         <a class="waves-effect waves-light btn" id="openSignageBtn">Open</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect ">
+                        <img  id="image2" src="img/graffiti.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Graffiti Report </span>
+                        <p><a class="activator" id="createGraffitiReportBtn">Create Request</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Graffiti Report <i class="mdi-navigation-close right"></i></span>
+                        <span class="span_h2" id="createdJobId2"> Loading...</span>
+                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
+
+                       <a class="waves-effect waves-light btn" id="openGraffitiBtn">Open</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect ">
+                        <img  id="image3" src="img/accident.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Traffic Accident </span>
+                        <p><a class="activator" id="createTrafficAccidentBtn">Create Request</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Traffic Accident <i class="mdi-navigation-close right"></i></span>
+                        <span class="span_h2" id="createdJobId3"> Loading...</span>
+                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
+
+                       <a class="waves-effect waves-light btn" id="openTrafficBtn">Open</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Parallax-->
+<div class="parallax-container">
+    <div class="parallax"><img src="img/parallax1.png"></div>
+</div>
+
+<!--View Request-->
+<div class="section scrollspy" id="viewRequest">
+    <div class="container">
+        <h2 class="header text_b"> View Requests </h2>
+        <!--<h5 class="text_h2"> View your requested reports: <span class="span_h2"> Job 32430.</span> </h5>-->
+        <div class="placeholderBlock" id="mapView"></div>
+
+    </div>
+</div>
+
+<!--Footer-->
+<footer id="contact" class="page-footer default_color scrollspy">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <form class="col s12" method="post">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix white-text"></i>
+                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
+                            <label for="icon_prefix" class="white-text"> Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="mdi-communication-email prefix white-text"></i>
+                            <input id="icon_email" name="email" type="email" class="validate white-text">
+                            <label for="icon_email" class="white-text">Email</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="mdi-editor-mode-edit prefix white-text"></i>
+                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                            <label for="icon_prefix2" class="white-text">Message</label>
+                        </div>
+                        <div class="col offset-s7 s5">
+                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
+                                <i class="mdi-content-send right white-text"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Address</h5>
+                <ul>
+                    <li><a class="white-text" href="#">Country: USA</a></li>
+                    <li><a class="white-text" href="#">City: Redlands</a></li>
+                    <li><a class="white-text" href="#">Address: 380 New York Street</a></li>
+                    <li><a class="white-text" href="#">Email: demo@city.com</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Follow US</h5>
+                <ul>
+                    <li>
+                        <a class="white-text" href="#">
+                            <i class="small fa fa-facebook-square white-text"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#">
+                            <i class="small fa fa-twitter-square white-text"></i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#">
+                            <i class="small fa fa-linkedin-square white-text"></i> Linkedin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright default_color">
+        <div class="container">
+            <!-- Made by <a class="white-text" href="http://joashpereira.com">Joash Pereira</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a> -->
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Structure -->
+<div id="modal" class="modal modal-fixed-footer ">
+  <div class="modal-content">
+    <h5>Report</h5>
+    <div class="loadingContent hidden">
+    <!--div class="loadingContent"-->
+      <p>Loading...</p>
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modalContent">
+      <!-- workflow view  -->
+      <div class="workflowView">
+        <div id="workflowProps">
+          <div>
+              <!-- Execution buttons -->
+            <div class="workflowButtonContainer">
+              <button class="waves-effect waves-light btn" id="executeBtn">Execute</button>
+              <button class="waves-effect waves-light btn" id="markCompleteBtn">Mark Complete</button>
+            </div>
+            <div id="workflowContents">
+            </div>
+          </div>
+        </div>
+
+        <div class="loadingContent" id="workflowPropsLoading">
+          <p>Loading...</p>
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- job properties -->
+      <div id="jobProps">
+        <strong>Job Name</strong>
+        <div id="jobField1" class="extra-wrap"></div><br/>
+        <strong>Job Description</strong>
+        <div id="jobField2" class="extra-wrap"></div><br/>
+        <strong>Assigned To</strong>
+        <div id="jobField3" class="extra-wrap"></div><br/>
+        <strong>Created Date</strong>
+        <div id="jobField4" class="extra-wrap"></div><br/>
+        <strong>Due Date</strong>
+        <div id="jobField5" class="extra-wrap"></div><br/>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CLOSE</a>
+  </div>
+</div>
+
+
+    <!--  Scripts-->
+    <script src="min/plugin-min.js"></script>
+    <script src="min/custom-min.js"></script>
+
+
+    </body>
+</html>
