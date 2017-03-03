@@ -3,7 +3,7 @@
 This sample was created to demonstrate integrating Workflow Manager functionality into an existing application.
 This was part of a Demo Theater entitled "ArcGIS Workflow Manager Web APIs: Getting Started" at DevSummit 2017.
 
-![App](https://raw.github.com/Esri/workflowmanager-CityOfBroadbent-demo/master/workflowmanager-CityOfBroadbent-demo.png)
+![App](https://raw.githubusercontent.com/Esri/workflowmanager-CityOfBroadbent-demo/master/workflowmanager-CityOfBroadbent-demo.png)
 
 ## Instructions
 
